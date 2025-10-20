@@ -1,0 +1,16 @@
+{
+  "name": "mandela-house-petition",
+  "version": "1.0.0",
+  "description": "Petition website for Mandela House justice",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
