@@ -786,6 +786,143 @@ blockquote cite {
     transform: translateX(-50%) translateY(0);
 }
 
+/* Citations & References Section */
+.citation {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.citation:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+.references-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.reference-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reference-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.ref-number {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-width: 40px;
+    flex-shrink: 0;
+}
+
+.ref-content {
+    flex: 1;
+}
+
+.ref-content strong {
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.ref-content p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.ref-content a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ref-content a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.ref-links {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+.ref-links li {
+    margin: 0.25rem 0;
+}
+
+.ref-note {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.transparency-note {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.transparency-note h3 {
+    color: var(--warning);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.transparency-note p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.transparency-note ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.transparency-note li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.transparency-note li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--warning);
+    font-weight: bold;
+}
+
+.transparency-note a {
+    color: var(--warning);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.transparency-note a:hover {
+    text-decoration: underline;
+}
+
 /* Action Section */
 .cta-section {
     background: var(--primary-color);
