@@ -27,3 +27,11 @@ screencapture-*.png
 
 # Node modules
 node_modules/
+
+# Database backups
+backups/
+*.sql.gz
+
+# PM2 process manager
+.pm2/
+logs/

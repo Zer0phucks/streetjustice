@@ -1,0 +1,65 @@
+# Digital Ocean App Platform Configuration
+# Deploy this petition website to Digital Ocean
+
+name: streetjustice-petition
+
+# Static site for frontend
+static_sites:
+  - name: frontend
+    github:
+      # Update with your repository details
+      repo: YOUR_USERNAME/streetjustice
+      branch: main
+      deploy_on_push: true
+
+    # Build settings
+    build_command: echo "No build needed - static site"
+    output_dir: /
+    index_document: index.html
+    error_document: index.html
+
+    # Environment variables for frontend
+    envs:
+      - key: NODE_ENV
+        value: production
+
+    # Routes for static files
+    routes:
+      - path: /
+      - path: /index.html
+      - path: /styles.css
+
+# Serverless functions for API
+functions:
+  - name: submit
+    source_dir: api
+    runtime: nodejs:18
+    envs:
+      - key: DATABASE_URL
+        scope: RUN_TIME
+        type: SECRET
+    routes:
+      - path: /api/submit
+
+  - name: count
+    source_dir: api
+    runtime: nodejs:18
+    envs:
+      - key: DATABASE_URL
+        scope: RUN_TIME
+        type: SECRET
+    routes:
+      - path: /api/count
+
+  - name: comments
+    source_dir: api
+    runtime: nodejs:18
+    envs:
+      - key: DATABASE_URL
+        scope: RUN_TIME
+        type: SECRET
+    routes:
+      - path: /api/comments
+
+# Database - using external Neon database
+# No database component needed since using Neon
