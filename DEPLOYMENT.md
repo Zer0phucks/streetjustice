@@ -65,20 +65,11 @@ SELECT * FROM signatures;
 Open terminal/command prompt in your project folder and run:
 
 ```bash
-# Initialize git
+
 git init
-
-# Add all files
 git add .
-
-# Commit
 git commit -m "Initial commit: Mandela House petition with Neon"
-
-# Add your GitHub repository as remote
-# Replace YOUR_USERNAME with your actual GitHub username
-git remote add origin https://github.com/YOUR_USERNAME/mandela-house-petition.git
-
-# Push to GitHub
+git remote add origin https://github.com/Zer0phucks/streetjustice.git
 git branch -M main
 git push -u origin main
 ```

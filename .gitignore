@@ -20,3 +20,10 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Screenshots and debug files
+screencapture-*.png
+*.screenshot.png
+
+# Node modules
+node_modules/
