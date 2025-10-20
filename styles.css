@@ -62,6 +62,10 @@ nav {
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
+nav .container {
+    position: relative;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -84,6 +88,40 @@ nav a {
 
 nav a:hover {
     background: var(--primary-color);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: var(--text-light);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Hero Section */
@@ -1057,12 +1095,39 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    /* Mobile Hamburger Menu */
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
     nav ul {
         flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--secondary-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    nav ul.active {
+        max-height: 500px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
 
     nav a {
         border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 1rem 1.5rem;
+    }
+
+    nav li:last-child a {
+        border-bottom: none;
     }
 
     .petition-form-container {
